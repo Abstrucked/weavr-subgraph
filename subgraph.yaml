@@ -8,9 +8,9 @@ dataSources:
     kind: ethereum/contract
     network: goerli
     source:
-      address: '0xf1Ba6Bf73c4EB490CC8389B138137886d22bA3Ed' # SET TO THE ACTUAL DEPLOYMENT ADDRESS
+      address: '0xC3F52C10ca3f76e53496aFED490a0D672Fd3D5e9' # SET TO THE ACTUAL DEPLOYMENT ADDRESS
       abi: Frabric
-      startBlock: 7476212 # SET TO THE ACTUAL DEPLOYMENT BLOCK
+      startBlock: 7559770 # SET TO THE ACTUAL DEPLOYMENT BLOCK
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.6
@@ -54,9 +54,9 @@ dataSources:
     kind: ethereum/contract
     network: goerli
     source:
-      address: '0x1Db4963c79C431D71e083d114AC5b79fdE3e808e' # SET TO THE ACTUAL DEPLOYMENT ADDRESS
+      address: '0x9018f685FdceE5d8A4Db8420C456c7CfBE42352E' # SET TO THE ACTUAL DEPLOYMENT ADDRESS
       abi: FrabricERC20
-      startBlock: 7476185   # SET TO THE ACTUAL DEPLOYMENT BLOCK
+      startBlock: 7559741   # SET TO THE ACTUAL DEPLOYMENT BLOCK
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.6
@@ -116,9 +116,9 @@ dataSources:
     name: ThreadDeployer
     network: goerli
     source:
-      address: '0xF78C9BCA95f98Eb8EB241Af0865946429a8A5050' # SET TO THE ACTUAL DEPLOYMENT ADDRESS
+      address: '0x0545608D01fdEF4b0E9564E00e525DAa9438E4Bc' # SET TO THE ACTUAL DEPLOYMENT ADDRESS
       abi: ThreadDeployer
-      startBlock: 10616035 # SET TO THE ACTUAL DEPLOYMENT BLOCK
+      startBlock: 7559797 # SET TO THE ACTUAL DEPLOYMENT BLOCK
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.6
@@ -140,9 +140,9 @@ dataSources:
     name: Bond
     network: goerli
     source:
-      address: '0x20cf3b3A2dA25B726eE367e20F5659f1794994a2' # SET TO THE ACTUAL DEPLOYMENT ADDRESS
+      address: '0xa875Fa4a7BbCA6e63f7DFc9df9839a752283d439' # SET TO THE ACTUAL DEPLOYMENT ADDRESS
       abi: BondContract
-      startBlock: 10616035 # SET TO THE ACTUAL DEPLOYMENT BLOCK
+      startBlock: 7559782 # SET TO THE ACTUAL DEPLOYMENT BLOCK
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.6
@@ -191,7 +191,7 @@ dataSources:
     name: Auction
     network: goerli
     source:
-      address: '0x6f1687bb64B2dFb9aA47589B74d44410AA1a5fF0' # SET TO THE ACTUAL DEPLOYMENT ADDRESS
+      address: '0x3A3f49d65291D7c27B49BeC82F614d31143167A8' # SET TO THE ACTUAL DEPLOYMENT ADDRESS
       abi: Auction
       startBlock: 7459200  # SET TO THE ACTUAL DEPLOYMENT BLOCK
     mapping:

@@ -7,7 +7,11 @@ import {
   Thread as ThreadContract
 } from '../../generated/templates/Thread/Thread';
 import { Thread as ThreadTemplate } from '../../generated/templates';
-import { Thread } from '../../generated/schema';
+import {
+  Crowdfund as CrowdfundContract
+} from '../../generated/templates/Crowdfund/Crowdfund';
+import {Crowdfund as CrowdfundTemplate} from '../../generated/templates';
+import { Crowdfund, Thread } from '../../generated/schema';
 import { getFrabricERC20 } from './helpers/erc20';
 
 // ### THREAD FACTORY ###
@@ -29,4 +33,21 @@ export function handleThread(event: ThreadEvent): void {
   thread.erc20 = getFrabricERC20(event.params.erc20).id
   thread.descriptor = event.params.descriptor
   thread.save()
+}
+
+export function handleCrowdfundedThread(event: CrowdfundedThread): void {
+  let threadID = event.params.thread
+  let crowdfundID = event.params.crowdfund.toHexString()
+  
+  // let crowdfundContext = new DataSourceContext()
+  // crowdfundContext.setString('id', crowdfundID)
+  // CrowdfundTemplate.createWithContext(event.params.crowdfund, crowdfundContext)
+
+  // let crowdfundContract = CrowdfundContract.bind(event.params.crowdfund)
+
+  let crowdfund = new Crowdfund(crowdfundID)
+  crowdfund.thread = event.params.thread.toHexString()
+  crowdfund.erc20 = event.params.token.toHexString()
+  
+
 }
