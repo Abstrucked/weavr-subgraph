@@ -6,11 +6,11 @@ schema:
 dataSources:
   - name: Frabric
     kind: ethereum/contract
-    network: goerli
+    network: arbitrum-goerli
     source:
-      address: '0xC3F52C10ca3f76e53496aFED490a0D672Fd3D5e9' # SET TO THE ACTUAL DEPLOYMENT ADDRESS
+      address: '0x7dEa92bDEAC76E620342903d8a8eC9041000dFe9' # SET TO THE ACTUAL DEPLOYMENT ADDRESS
       abi: Frabric
-      startBlock: 7559770 # SET TO THE ACTUAL DEPLOYMENT BLOCK
+      startBlock: 4029069 # SET TO THE ACTUAL DEPLOYMENT BLOCK
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.6
@@ -50,75 +50,13 @@ dataSources:
           handler: handleVote
         - event: Vouch(indexed address,indexed address)
           handler: handleVouch
-  - name: FRBC
-    kind: ethereum/contract
-    network: goerli
-    source:
-      address: '0x9018f685FdceE5d8A4Db8420C456c7CfBE42352E' # SET TO THE ACTUAL DEPLOYMENT ADDRESS
-      abi: FrabricERC20
-      startBlock: 7559741   # SET TO THE ACTUAL DEPLOYMENT BLOCK
-    mapping:
-      kind: ethereum/events
-      apiVersion: 0.0.6
-      language: wasm/assemblyscript
-      file: ./src/mappings/frabricERC20.ts
-      entities:
-        - FrabricERC20
-        - FrabricERC20Holder
-        - FrabricERC20Balance
-        - FrabricERC20Transfer
-        - WhitelistRecord
-        - PricePoint
-        - Order
-      abis:
-        - name: FrabricERC20
-          file: ./abis/FrabricERC20.json
-        - name: BeaconProxy
-          file: ./abis/BeaconProxy.json
-        - name: Frabric
-          file: ./abis/Frabric.json
-      eventHandlers:
-        - event: Claim(indexed uint256,indexed address,uint112)
-          handler: handleClaim
-        - event: DelegateChanged(indexed address,indexed address,indexed address)
-          handler: handleDelegateChanged
-        - event: DelegateVotesChanged(indexed address,uint256,uint256)
-          handler: handleDelegateVotesChanged
-        - event: Distribution(indexed uint256,indexed address,uint112)
-          handler: handleDistribution
-        - event: Freeze(indexed address,uint64)
-          handler: handleFreeze
-        - event: GlobalAcceptance()
-          handler: handleGlobalAcceptance
-        - event: KYCUpdate(indexed address,indexed bytes32,indexed bytes32,uint256)
-          handler: handleKYCUpdate
-        - event: Order(indexed uint8,indexed uint256)
-          handler: handleOrder
-        - event: OrderCancellation(indexed address,indexed uint256,uint256)
-          handler: handleOrderCancellation
-        - event: OrderCancelling(indexed address,indexed uint256)
-          handler: handleOrderCancelling
-        - event: OrderFill(indexed address,indexed uint256,indexed address,uint256)
-          handler: handleOrderFill
-        - event: OrderIncrease(indexed address,indexed uint256,uint256)
-          handler: handleOrderIncrease
-        - event: Paused(address)
-          handler: handlePaused
-        - event: Removal(indexed address,uint256)
-          handler: handleRemoval
-        - event: Transfer(indexed address,indexed address,uint256)
-          handler: handleTransfer
-        - event: Unpaused(address)
-          handler: handleUnpaused
-        - event: Whitelisted(indexed address,indexed bool)
-          handler: handleWhitelisted
   - kind: ethereum/contract
     name: ThreadDeployer
-    network: goerli
+    network: arbitrun-goerli
     source:
-      address: '0x0545608D01fdEF4b0E9564E00e525DAa9438E4Bc' # SET TO THE ACTUAL DEPLOYMENT ADDRESS
+      address: '0x7899A97E7a6518e95A7c22653477aaA97A7E7b64' # SET TO THE ACTUAL DEPLOYMENT ADDRESS
       abi: ThreadDeployer
-      startBlock: 7559797 # SET TO THE ACTUAL DEPLOYMENT BLOCK
+      startBlock: 4029113 # SET TO THE ACTUAL DEPLOYMENT BLOCK
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.6
@@ -138,11 +76,11 @@ dataSources:
           handler: handleThread
   - kind: ethereum/contract
     name: Bond
-    network: goerli
+    network: arbitrun-goerli
     source:
-      address: '0xa875Fa4a7BbCA6e63f7DFc9df9839a752283d439' # SET TO THE ACTUAL DEPLOYMENT ADDRESS
+      address: '0x0965781A4C1e277Abb15dAb4058182345Fc3E726' # SET TO THE ACTUAL DEPLOYMENT ADDRESS
       abi: BondContract
-      startBlock: 7559782 # SET TO THE ACTUAL DEPLOYMENT BLOCK
+      startBlock: 4029090 # SET TO THE ACTUAL DEPLOYMENT BLOCK
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.6
@@ -167,7 +105,7 @@ dataSources:
           handler: handleUnbond
   # - kind: ethereum/contract
   #   name: Timelock
-  #   network: goerli
+  #   network: arbitrun-goerli
   #   source:
   #     address: '0x0000000000000000000000000000000000000000' # SET TO THE ACTUAL DEPLOYMENT ADDRESS
   #     abi: Timelock
@@ -189,7 +127,7 @@ dataSources:
   #         handler: handleLock
   - kind: ethereum/contract
     name: Auction
-    network: goerli
+    network: arbitrun-goerli
     source:
       address: '0x3A3f49d65291D7c27B49BeC82F614d31143167A8' # SET TO THE ACTUAL DEPLOYMENT ADDRESS
       abi: Auction
@@ -215,7 +153,7 @@ dataSources:
 templates:
   - name: Crowdfund
     kind: ethereum/contract
-    network: goerli
+    network: arbitrun-goerli
     source:
       abi: Crowdfund
     mapping:
@@ -251,7 +189,7 @@ templates:
           handler: handleWithdraw
   - name: Thread
     kind: ethereum/contract
-    network: goerli
+    network: arbitrun-goerli
     source:
       abi: Thread
     mapping:
@@ -309,7 +247,7 @@ templates:
           handler: handleVote
   - name: FrabricERC20
     kind: ethereum/contract
-    network: goerli
+    network: arbitrun-goerli
     source:
       abi: FrabricERC20
     mapping:
